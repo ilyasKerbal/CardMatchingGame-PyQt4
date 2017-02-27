@@ -1,3 +1,7 @@
+# Developer  : ILYAS KERBAL
+# Github: https://github.com/ilyasKerbal
+# Email: kerbalsc@gmail.com
+
 from PyQt4 import QtGui
 import time
 class Card(QtGui.QLabel):

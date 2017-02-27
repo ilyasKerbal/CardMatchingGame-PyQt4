@@ -1,3 +1,8 @@
+# Developer  : ILYAS KERBAL
+# Github: https://github.com/ilyasKerbal
+# Email: kerbalsc@gmail.com
+
+# Set application's taskbar icon in Windows
 try:
     import ctypes
     myappid = 'kerbalapp.cardmatching.github.one'
@@ -8,4 +13,4 @@ except Exception:
 if __name__ == "__main__":
     import sys
     from package import app
-    sys.exit(app.run())
+    sys.exit(app.run()) # Run the game

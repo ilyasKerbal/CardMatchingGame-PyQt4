@@ -1,3 +1,7 @@
+# Developer  : ILYAS KERBAL
+# Github: https://github.com/ilyasKerbal
+# Email: kerbalsc@gmail.com
+
 import sys
 from PyQt4 import QtCore, QtGui
 from .about import About
@@ -6,7 +10,8 @@ from .interfaceUI import InterfaceUI
 from random import shuffle
 import time
 from images import *
-#to solve the problem of the missing QString
+
+#solve the problem of the missing QString
 try:
     from PyQt4.QtCore import QString
 except ImportError:
@@ -17,19 +22,20 @@ except ImportError:
 class MainInterface(QtGui.QMainWindow):
     def __init__(self):
         super(MainInterface,self).__init__()
+
         self.tb = self.addToolBar("Main")
 
         #Game Properties
-        self.cardCategories = ["celebs", "cities", "football", "tennis"]
-        shuffle(self.cardCategories)
-        shuffle(self.cardCategories)
-        self.category = self.cardCategories[0]
+        self.cardCategories = ["celebs", "cities", "football", "tennis"] # Game Categories assets/img/cards/*
+        shuffle(self.cardCategories) # Randomize Categories
+        shuffle(self.cardCategories) # Randomize Categories
+        self.category = self.cardCategories[0] # Choose the first one in the list
         self.level = "Hard"  # Easy Or Hard
 
         #Interface UI
         self.interface = InterfaceUI(self.level,self.category)
 
-        #Init Action
+        #Toolbar Actions
         self.restart =  QtGui.QAction(QtGui.QIcon(":package/assets/img/restart.png"), "New", self)
         self.settings = QtGui.QAction(QtGui.QIcon(":package/assets/img/settings.png"), "Settings", self)
         self.about = QtGui.QAction(QtGui.QIcon(":package/assets/img/about.png"), "About", self)
@@ -93,21 +99,23 @@ class MainInterface(QtGui.QMainWindow):
 
 
 def run():
+    # Init the game UI
     app = QtGui.QApplication(sys.argv)
-    QtGui.QApplication.setApplicationName("Card Matching")
-    QtGui.QApplication.setApplicationVersion("1.0")
-    start = time.time()
+    QtGui.QApplication.setApplicationName("Card Matching") #Game name
+    QtGui.QApplication.setApplicationVersion("1.0") #Game version
 
-    #SplashScreen
+    # Splash Screen
+    start = time.time()
+    splashDuration = 4 # You can change the duration (sec)
     splash = QtGui.QSplashScreen(QtGui.QPixmap(":package/assets/img/splashScreen.png"), QtCore.Qt.WindowStaysOnTopHint)
     splash.show()
-    while time.time() - start < 4:
+    while time.time() - start < splashDuration:
         time.sleep(0.001)
         app.processEvents()
 
     interface = MainInterface()
-    interface.show()
+    interface.show() # Show the interface
 
-    splash.finish(interface)
+    splash.finish(interface) # Finish the splash screen
 
     sys.exit(app.exec_())

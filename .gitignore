@@ -2,6 +2,10 @@
 .idea/
 __pycache__/
 images.py
+preview1.png
+preview2.png
+preview3.png
+preview4.png
 package/assets/
 *.py[cod]
 *$py.class

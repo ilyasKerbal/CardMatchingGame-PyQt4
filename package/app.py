@@ -24,7 +24,7 @@ class MainInterface(QtGui.QMainWindow):
         shuffle(self.cardCategories)
         shuffle(self.cardCategories)
         self.category = self.cardCategories[0]
-        self.level = "Easy"  # Easy Or Hard
+        self.level = "Hard"  # Easy Or Hard
 
         #Interface UI
         self.interface = InterfaceUI(self.level,self.category)
@@ -51,7 +51,7 @@ class MainInterface(QtGui.QMainWindow):
         #Set Signals and Slots
         self.tb.actionTriggered[QtGui.QAction].connect(self.tbAction)
 
-        self.setWindowTitle("Hello World") #Set Window Title
+        self.setWindowTitle("Card Matching") #Set Window Title
         self.setCentralWidget(self.interface)
         self.setFixedSize(QtCore.QSize(732, 557))
 
@@ -101,7 +101,7 @@ def run():
     #SplashScreen
     splash = QtGui.QSplashScreen(QtGui.QPixmap(":package/assets/img/splashScreen.png"), QtCore.Qt.WindowStaysOnTopHint)
     splash.show()
-    while time.time() - start < 3:
+    while time.time() - start < 4:
         time.sleep(0.001)
         app.processEvents()
 

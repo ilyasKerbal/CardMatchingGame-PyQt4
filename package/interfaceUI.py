@@ -70,8 +70,10 @@ class InterfaceUI(QtGui.QWidget):
         #Init Components
         self.startBtn.setIcon(QtGui.QIcon(":package/assets/img/timer.png"))
         self.stopBtn.setIcon(QtGui.QIcon(":package/assets/img/stop.png"))
+        self.mediumLayout1.addStretch()
         self.mediumLayout1.addWidget(self.startBtn)
         self.mediumLayout1.addWidget(self.stopBtn)
+        self.mediumLayout1.addStretch()
         self.timer.setStyleSheet('color: blue')
         self.successfulHints.setStyleSheet('color: green')
         self.unsuccessfulHints.setStyleSheet('color: red')
@@ -158,11 +160,4 @@ class InterfaceUI(QtGui.QWidget):
             self.gameOver = True
             self.stop(None)
             self.grid.showAll()
-        # if(len(self.cardCouple) == 0):
-        #     self.cardCouple.append(card)
-        # if(len(self.cardCouple) == 1):
-        #     if(card.number == self.cardCouple[0].number):
-        #         card.setEnabled(False)
-        #         self.cardCouple[0].setEnabled(False)
-        #         del self.cardCouple[:]
 

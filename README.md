@@ -7,10 +7,10 @@ A simple python game using PyQt4 and OOP
 * Pyrcc4 (if you want to change images)
 
 # Preview
-![] (preview1.png)
-![] (preview2.png)
-![] (preview3.png)
-![] (preview4.png)
+![](preview1.png)
+![](preview2.png)
+![](preview3.png)
+![](preview4.png)
 
 # Change images
 All the images are listed in `images.qrc`.
